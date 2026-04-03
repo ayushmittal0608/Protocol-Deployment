@@ -21,28 +21,28 @@ NoFeeSwap is a protocol that allows permissionless swaps without fees. This proj
 # Setup Local Blockchain
 - Install foundry
 For Windows / Mac / Linux (via curl):
-    \`\`\`bash
+    ```bash
         curl -L https://foundry.paradigm.xyz | bash
-    \`\`\`
+    ```
 
 After installation, update your path and install latest Foundry binaries:
-    \`\`\`bash
+    ```bash
         foundryup
-    \`\`\`
+    ```
 (if showing command not found, close the git bash and reopen it)
 
 Check installation:
-    \`\`\`bash
+    ```bash
         forge --version
         anvil --version
         cast --version
-    \`\`\`
+    ```
 
 - Start Local Blockchain
     Run:
-    \`\`\`bash
+    ```bash
         anvil
-    \`\`\`
+    ```
     (keep it running and execute other commands in new git bash terminal)
     We'll get:
     - RPC: http://127.0.0.8545
@@ -52,47 +52,47 @@ Check installation:
 
 - Clone Repositories (core and operator)
     Run:
-    \`\`\`bash
+    ```bash
         git clone https://github.com/NoFeeSwap/core.git
         git clone https://github.com/NoFeeSwap/operator.git
-    \`\`\`
+    ```
 
 # Deploy Core Contracts
 - Compile Core Contracts
-    \`\`\`bash
+    ```bash
         cd core
         forge install
         forge build
-    \`\`\`
+    ```
 
 - Execute Script for Core Contracts
     Run:
-    \`\`\`bash
+    ```bash
         forge script script/DeployCore.s.sol:DeployCore --rpc-url http://127.0.0.1:8545 --broadcast
-    \`\`\`
+    ```
 
 # Deploy Operator Contracts
 - Compile Operator Contracts
-    \`\`\`bash
+    ```bash
         cd operator
         forge install
         forge build
-    \`\`\`
+    ```
 
 - Execute Script for Operator Contracts
     Run:
-    \`\`\`bash
+    ```bash
         forge script script/DeployOperator.s.sol:DeployOperator --rpc-url http://127.0.0.1:8545 --broadcast
-    \`\`\`
+    ```
 
 # Deploy and Mint Mock Tokens
 For checking if the token is minted or not, use the token address from the logs of script and add it to CheckMint.s.sol, execute it and track the transaction balance and if it is greater than 0, it is minted. I know it is not automated yet, I am working upon it.
 
 - Execute Script for Mint Mock Tokens
     Run:
-    \`\`\`bash
+    ```bash
         forge script script/CheckMint.s.sol:CheckMint --rpc-url http://127.0.0.1:8545 --broadcast
-    \`\`\`
+    ```
 
 # Keys and Credentials
 - Private Key:
