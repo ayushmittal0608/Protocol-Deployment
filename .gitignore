@@ -1,0 +1,11 @@
+# Foundry/Solidity artifacts
+out/
+cache/
+broadcast/
+core/cache/
+core/broadcast/
+operator/cache/
+operator/broadcast/
+
+# Specific locks
+foundry.lock
